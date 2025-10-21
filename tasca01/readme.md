@@ -7,4 +7,4 @@ Com a resposta a aquesta crisi, la Direcció Tècnica ha emès una directriu: to
 
 Fase 1: Anàlisi i Justificació (Document d'Informe)
 
-[Informe](/infrome.md)
+[Informe](/readme.md/infrome.md)
