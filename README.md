@@ -23,7 +23,7 @@ Apagar focs, resoldre incidències, respondre tickets, mantenir sistemes, docume
 
 ## Tasques del projecte 3
 
-[Tasca02](tasca02/readme.md)
+[Tasca01](tasca01/readme.md)
 
 [Tasca03](tasca03/readme.md)
 
