@@ -19,3 +19,12 @@ Els antics alumnes (vosaltres) heu ascendit. Sou els tècnics júnior del depart
 El vostre dia a dia?
 Apagar focs, resoldre incidències, respondre tickets, mantenir sistemes, documentar-ho tot (abans que algú formategi per error) i, si queda temps, aprendre a no perdre els nervis.
 És la vida real dins una empresa IT:  el caos ben documentat.
+
+
+## Tasques del projecte 3
+
+[Tasca02](tasca02/readme.md)
+
+[Tasca03](tasca03/readme.md)
+
+[Tasca08](Tasca08/readme.md)
