@@ -8,94 +8,93 @@ En aquest cas ho farem a través de la Microsoft Store; únicament haurem de cli
 🔗 [Pàgina oficial de descàrrega](https://bitwarden.com/download/#downloads-desktop)  
 🔗 [Microsoft Store](https://apps.microsoft.com/detail/9pjsdv0vpk04?hl=ca&gl=ES&ocid=pdpshare)
 
-![Text alternatiu](ruta/de/la/imatge.jpg)
+![Text alternatiu](img/1.png)
 
 
 
 ### Crear un compte
 
 Un cop obert Bitwarden, sortirà aquesta pantalla:  
-**(Imatge aquí)**
+![Text alternatiu](img/2.png)
 
-Com que no tenim cap compte, hem d'escollir l'opció **“Crea un compte”**.
+Un cop fet això tindrem això hem de col·locar un compte de correu i un nom per poder accedir al compte.
+ 
+![Text alternatiu](img/3.png)
 
-Després, caldrà col·locar un **correu electrònic** i un **nom d’usuari** per poder accedir al compte.  
-**(Imatge aquí)**
+Un com que hem introduït el compte de correu i hem escollit un nom haurem d’anar al correu a buscar l'enllaç tal com ens indica Bitwarden.
+![Text alternatiu](img/4.png)
 
-Un cop introduït el compte de correu i el nom, haurem d’anar al **correu electrònic** a buscar l’enllaç que ens indica Bitwarden.  
-**(Imatge aquí)**
-
-Quan trobem el correu, fem clic a l’enllaç per poder **escollir la contrasenya del nostre compte**.  
-**(Imatge aquí)**
+Un cop que hem trobat el correu farem clic a l'enllaç per poder anar a l'enllaç per poder escollir la contrasenya del nostre compte.
+![Text alternatiu](img/5.png)
 
 
 ### Escollir la contrasenya mestra
 
-Aquesta serà la **contrasenya mestra**.  
-És **MOLT IMPORTANT**, ja que **no es pot recuperar**.  
-Si l’oblidem, perdrem l’accés al gestor i totes les contrasenyes.
+Un cop aquí haurem d’escollir la nostra contrasenya mestra, és IMPORTANT la contrasenya mestra no es pot recuperar, per tant, si oblidem la contrasenya perdrem l'accés al nostre gestor de contrasenyes, per tant, també perdrem totes les contrasenyes.
 
-Per seguretat, podem afegir una **pista** per recordar-la.  
-Cal triar una **contrasenya forta però recordable**.  
-**(Imatge aquí)**
+Per intentar evitar això podem afegir una pista per poder recordar la contrasenya en cas que oblidem, hem d’escollir una contrasenya forta, però que la podem recordar.
+![Text alternatiu](img/6.png)
 
-Un cop creada, veurem una notificació confirmant que el compte s’ha creat correctament.
+Un cop que ja hem escollit la nostra contrasenya podrem veure una notificació dient que el nostre compte s’ha creat correctament.
 
-Bitwarden ofereix també la possibilitat d’instal·lar una **extensió de navegador (Google Chrome)** per autocompletar contrasenyes automàticament.  
-Això és opcional.  
-**(Imatge aquí)**
+Bitwarden ens dona l'opció d'instal·lar una extensió de Google per poder accedir amb més comoditat a les contrasenyes i poder fer servir funció d'autocompletar les contrasenyes d’una forma més fàcil, però fer això ja és decisió de l'usuari en qüestió.
+![Text alternatiu](img/7.png)
 
 
 
 ### Inici de sessió
 
-Tornem a l’aplicació i fem clic a **“Inicia sessió”**.
+Un cop fet això ja podem tornar a l’aplicació i fer clic on posa inicia sessió, ja que, ja hem creat el nostre compte.
+![Text alternatiu](img/4.png)
 
 Introduïm el **correu electrònic** i fem clic a **“Continua”**.  
-**(Imatge aquí)**
+![Text alternatiu](img/8.png)
 
 A continuació, escrivim la **contrasenya mestra**.  
-**(Imatge aquí)**
+![Text alternatiu](img/9.png)
 
 Un cop introduïdes les dades, ja estarem dins del nostre compte.  
-**(Imatge aquí)**
+![Text alternatiu](img/10.0.png)
+
 
 
 
 ## Generar una contrasenya forta
 
-Podem escollir la **longitud**, els **caràcters** que volem incloure i el **mínim de números o símbols**.  
-En fer clic a la **rodeta**, es genera una nova contrasenya, i amb l’altre botó la podem **copiar**.  
-**(Imatge aquí)**
+Ara explicaré com generar una contrasenya forta.
+
+Podem escollir la longitud quins caràcters volem que inclogui i el mínim de números i caràcters especials tingui, un cop fet això si fem clic a la rodeta del costat es genera una nova contrasenya i l’altre botó és per copiar la contrasenya. 
+
+![Text alternatiu](img/10.5.png)
 
 
 
-## Afegir un compte nou
+## Afegir la primera contrasenya
 
-Per afegir el nostre primer compte i contrasenya, fem clic al **signe +** i escollim l’opció **“Inici de sessió”**.  
-**(Imatge aquí)**
+Ara per poder afegir el nostre primera conta i contrasenya haurem d’anar al \+ i escollir l'opció d'inici de sessió.![Text alternatiu](img/11.png)
 
-Omplim els camps següents:
 
-- **Nom de l’element:** (p. ex. Gmail, GitHub…)  
-- **Usuari i contrasenya:** podem generar una nova contrasenya amb la rodeta o introduir-ne una existent.  
-- **Lloc web:** l’enllaç del servei (p. ex. [https://accounts.google.com](https://accounts.google.com))  
+Un cop que tenim això obert haurem de completar els espais en buit, el nom d’element serà un nom per poder saber de què és el compte que estem guardant, per exemple Gmail o GitHub…
 
-**(Imatge aquí)**
+Tot seguit haurem de col·locar l’usuari i contrasenya del compte podem afegir la contrasenya si ja és un compte creada prèviament o podem generar la contrasenya fent clic a la rodeta al costat de l’ull de contrasenya.
+
+I per últim el lloc web serà l'enllaç de el compte que estem guardant, per exemple [gmail](https://accounts.google.com/v3/signin/identifier?dsh=S-1977065783%3A1761227768212796&hl=es&ifkv=AfYwgwXe-zsOx6HI3HF5v1SOoNkDtSJHa1LAp3jHmfYvpiXY_fAQmpU8kgaSHePBY5GTmCjneZVK&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin)
+
+![Text alternatiu](img/14.0.png)
 
 
 
 ## Instal·lar l’extensió de Google Chrome
 
-Per fer servir l’extensió:
+Ara mostraré com fer servir l'extensió de Google, per començar haurem d'instal·lar a mitjançant aquest [enllaç](https://chromewebstore.google.com/detail/bitwarden-gestor-de-contr/nngceckbapebfimnlniiiahkandclblb?hl=ca&utm_source=ext_sidebar)
 
-🔗 [Extensió Bitwarden a Chrome Web Store](https://chromewebstore.google.com/detail/bitwarden-gestor-de-contr/nngceckbapebfimnlniiiahkandclblb?hl=ca&utm_source=ext_sidebar)
+![Text alternatiu](img/14.5.png)
 
 Un cop instal·lada, obrim-la i iniciem sessió.  
-**(Imatge aquí)**
+![Text alternatiu](img/14.6.png)
 
 Quan iniciem sessió a Gmail, veurem que Bitwarden ens ofereix l’opció d’**autocompletar**.  
-**(Imatge aquí)**
+![Text alternatiu](img/15.png)
 
 
 
@@ -105,28 +104,21 @@ Per exportar totes les contrasenyes:
 
 1. Anem a **Fitxer → Exportar caixa forta**  
    *(la “caixa forta” és on s’emmagatzemen totes les contrasenyes)*  
-   **(Imatge aquí)**  
+   ![Text alternatiu](img/19.png)  
 2. Escollim el **format** amb el qual volem exportar-les (.json, .csv, etc.)  
-   **(Imatge aquí)**  
+   ![Text alternatiu](img/20.png)
 3. Ens demanarà la **contrasenya mestra** per confirmar la identitat.  
-   **(Imatge aquí)**  
-4. Ja tindrem les contrasenyes exportades.  
+   ![Text alternatiu](img/21.png)
+4. Ja tindrem les contrasenyes exportades.
+  ![Text alternatiu](img/22.png)
+   
 
-És recomanable **guardar l’arxiu exportat en un lloc segur**, com ara un **USB xifrat**.  
-D’aquesta manera, si ens el roben, les dades continuaran protegides.
+Per acabar, hem de guardar aquest arxiu en algun lloc segur perquè ningú pugui accedir a les nostres contrasenyes, per mi personalment la millor opció és un USB xifrat, ja que si sempre el portem amb nosaltres no ens podran robar l’arxiu, i en cas que el robin el USB estarà xifrat.
 
 
 
-## ✅ Conclusió
 
-Amb Bitwarden ja podem:
 
-- Gestionar contrasenyes de forma segura  
-- Generar contrasenyes fortes  
-- Autocompletar credencials als navegadors  
-- Exportar còpies de seguretat de manera xifrada  
-
-**(Fi del document)**
 
 
 
