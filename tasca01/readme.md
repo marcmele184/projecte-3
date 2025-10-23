@@ -8,3 +8,8 @@ Com a resposta a aquesta crisi, la Direcció Tècnica ha emès una directriu: to
 Fase 1: Anàlisi i Justificació (Document d'Informe)
 
 [Informe](informe.md)
+
+
+Fase 2: Guia d'Ús Tècnica (Manual Operatiu)
+
+[Guia](guia.md)
