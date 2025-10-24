@@ -25,3 +25,20 @@ Apagar focs, resoldre incidències, respondre tickets, mantenir sistemes, docume
 
 [Tasca01](tasca01/readme.md)
 
+[Tasca02](T2/readme.md)
+
+[Tasca03](T3/readme.md)
+
+[Tasca04](T4/readme.md)
+
+[Tasca05](T5/readme.md)
+
+[Tasca06](T6/readme.md)
+
+[Tasca07](T7/readme.md)
+
+[Tasca08](T8/readme.md)
+
+[Tasca09](T9/readme.md)
+
+[Tasca10](T10/readme.md)
