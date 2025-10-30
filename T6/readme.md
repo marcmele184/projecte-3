@@ -2,6 +2,6 @@ Com membres cada cop més integrats de l'equip tècnic de la consultora EverPia,
 Se us ha encarregat realitzar una auditoria teòrica i pràctica del servei DNS per tal de formar el personal del client i oferir eines de diagnosi ràpides.
 
 
-(**Fase teòrica: Sessió formativa**)[/1]
+[**Fase teòrica: Sessió formativa**](/1)
 
 
