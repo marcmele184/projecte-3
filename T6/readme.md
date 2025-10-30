@@ -5,3 +5,5 @@ Se us ha encarregat realitzar una auditoria teòrica i pràctica del servei DNS 
 [**Fase teòrica: Sessió formativa**](1)
 
 
+[**Fase Pràctica: Diagnosi de Noms (Auditoria amb CLI)**](2)
+
