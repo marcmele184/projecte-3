@@ -52,8 +52,7 @@ El mode és força senzill, bàsicament hi ha tres comandes a usar:
 
 * Anàlisi: Per què indica que la resposta és no autoritativa?
 
-  Per que el servidor que fa la resposta no és el servidor autoritatiu perquè una resposta autoritativa únicament la poden donar els servidors que tenen la informació original.
-
+  Perquè el servidor que fa la resposta no és el servidor autoritatiu perquè una resposta autoritativa únicament la poden donar els servidors que tenen la informació original.
 
   
 
@@ -65,13 +64,13 @@ El mode és força senzill, bàsicament hi ha tres comandes a usar:
 
 * Anàlisi: Quines diferències s’observen a la resposta obtinguda amb la comanda 1?
 
-  Podem veure que la diferència és que la resposta és autoritativa, això és perquè abans de fer el nslookup ens hem connectat al servidor autoritatiu de tecnocampus
-
+  Podem veure que la diferència és que la resposta és autoritativa, això és perquè abans de fer el nslookup ens hem connectat al servidor autoritatiu de TecnoCampus
+  
 **Resolucions locals**
 
 Finalment es vol comprovar el funcionament de la resolució local, útil per entorns de xarxa local on no es disposa de servidor de noms propi i que evita haver d’accedir a equips o recursos per la seva IP.
 
-Per poder fer la resolució local hem de fer servir un adaptador pont per poder comunicar-nos amb l’ordinador d’un company fent un ping, en aquest cas la maquina del company és diu usuari he fet un ping usuari.local, fent que pugui fer un ping sense ip
+Per poder fer la resolució local hem de fer servir un adaptador pont per poder comunicar-nos amb l’ordinador d’un company fent un ping, en aquest cas la màquina del company es diu usuari he fet un ping usuari.local, fent que pugui fer un ping sense IP
 
 ![fent un ping](img/8.png) 
 
