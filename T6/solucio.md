@@ -33,8 +33,7 @@
      ![comanda dig \-x 147.83.2.135  ](img/4.png) 
   * Anàlisi: Quina informació sobre els registres s’obté?
 
-    Bàsicament ens indica que una mateixa ip pot tindre diferents domini, en aquest cas podem veure que que està associat per exemple a [barcelonatech.upc.edu](http://barcelonatech.upc.edu) entre altres podem veure que aquesta ip esta bastant relacionada amb la Upc
-
+    Bàsicament, ens indica que una mateixa IP pot tindre diferents domini, en aquest cas podem veure que està associat per exemple a [barcelonatech.upc.edu](http://barcelonatech.upc.edu) entre altres podem veure que aquesta IP està bastant relacionada amb la Upc
 **Comprovació de Resolució amb nslookup (Multiplataforma)**
 
 L’eina nslookup es troba a pràcticament a qualsevol sistema operatiu. Es pot usar de forma similar a dig incloent l’argument o si s’executa nslookup sense arguments, entrar en el mode interactiu, us apareix un prompt (\>). Serà aquest mode el que explorareu . 
