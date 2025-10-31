@@ -6,14 +6,13 @@
     ![comanda dig](img/1.png) 
   * Anàlisi: Identifica la IP de resposta, el valor TTL i el servidor que ha respost a la consulta.
 
-  Tenim que la ip de resposta és 83.247.151.214 el seu TTL és de 2344 segons i el seu servidor de resposta és 127.0.0.53
-
+ Tenim que la IP de resposta és 83.247.151.214 el seu TTL és de 2344 segons i el seu servidor de resposta és 127.0.0.53.
 
 * **Comanda 2: Consulta de Servidors de Noms (NS)**  
   * Executa dig tecnocampus.cat NS  
     ![comanda dig](img/2.png) 
   * Anàlisi: Quins són els servidors de noms autoritatius per a aquest domini?  
-    Hi ha 4 i son   
+    Hi ha 4 i són   
     [ns-1071.awsdns-05.org](http://ns-1071.awsdns-05.org).  
     [ns-130.awsdns-16.com](http://ns.130.awsdns-16.com).  
     [ns-1689-19.co.uk](http://ns-1689-19.co.uk)  
@@ -28,8 +27,7 @@
  ![comanda dig amb SOA](img/3.png) 
 
 * Anàlisi: Quina és la informació del correu de l'administrador i el número de sèrie del domini?  
-  la informació del correu és que el correu de l'administrador és [root@dns.nominalia.com](mailto:root@dns.nominalia.com) i el seu numero de serie és 1761028965 86400 7200 2592000 300  
-     
+  La informació del correu és que el correu de l'administrador és [root@dns.nominalia.com](mailto:root@dns.nominalia.com) i el seu número de sèrie és 1761028965 86400 7200 2592000 300       
 * **Comanda 4: Consulta resolució inversa**  
   * Executa comanda dig \-x 147.83.2.135  
      ![comanda dig \-x 147.83.2.135  ](img/4.png) 
