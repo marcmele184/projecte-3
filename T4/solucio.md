@@ -1,214 +1,231 @@
-# 🧩 T04 — Serveis de Directori LDAP
+![][image1]
 
-**Autor:** Marc Melendo Vicens  
-**Data:** 25/09/2025  
+**Serveis de directori. LDAP**
 
----
+**25/09/2025** 
 
-## 🖥️ Configuració inicial del servidor
+**Marc Melendo Vicens**
 
-### 1. Modificació del hostname
-Edita l'arxiu /etc/hosts i canvia la segona línia afegint:
-server.innovatechXX.test server
-(Substitueix XX pel número de llista)
+Per començar haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el archiu /etc/hosts amb sudo nano
 
-![Edició de /etc/hosts](images/hosts_config.png)
+Editarem la segona línia de comanda en el qual en primer lloc modificarem el host name col·locant server.innovatechXX.test on XX és el numero de llista i despres escriurem server
 
----
+![][image2]
 
-### 2. Configuració de les interfícies de xarxa
-Adaptador 1: NAT (per defecte)  
-Adaptador 2: Host-Only → activar abans d’iniciar la màquina
+A continuació configurarem els 2 adaptadors de xarxa que tenim, el primer el adaptador nat que està per defecte i el segon colocar-em el adaptador host only
 
-Edita /etc/netplan/<nom_arxiu>.yaml i activa DHCP a enp0s8
+Per començar hem d’activar-lo abans de iniciar la máquina
 
-Executa:
-sudo netplan apply
+![][image3]
 
-![Configuració del fitxer netplan](images/netplan_setup.png)
+Un cop fet això modificarem l’arxiu de xarxa fent sudo nano /etc/netplan/ (tabular per completar, només hi ha 1 arxiu)
 
----
+El primer adaptador esta configurat de fabrica, el segon sera el enp0s8 on activar-em el dhcp per tindre una ip de forma automatica. Un cop guardat farem sudo netplan apply per guardar la nova configuració
 
-## 🧱 Instal·lació i configuració d’OpenLDAP
+![][image4]
 
-Instal·lació:
-sudo apt install slapd ldap-utils
+Ara instalarem el OpenLDAP aixo ho farem amb la seguent comanda
 
-Contrasenya: p@ssw0rd
+![][image5]
 
-Comprovació:
-systemctl status slapd
-slapcat
+Un cop fet això s’obrira un menu que haurem de seguir i ens demanara una contrasenya, en aquest cas el client ens demana fer servir la contrasenya p@ssw0rd
 
-Si cal:
-sudo dpkg-reconfigure slapd
+![][image6]
 
-![Comprovació slapd](images/slapd_status.png)
+Un cop fet això farem system status slapd per verificar que funciona correctament
 
----
+![][image7]
 
-## 🗂️ Creació d’OUs (users i groups)
+I amb slapcat podem verificar si hem configurat correctament tot si hi ha alguna cosa que no surt com hauria de sortir podem fer dpkg-reconfigure slapd per tornar a configurar-lo
 
-Exemple OU_users.ldif:
-dn: ou=users,dc=innovatech,dc=test
-objectClass: organizationalUnit
-ou: users
+![][image8]
 
-Afegir:
-sudo ldapadd -x -D cn=admin,dc=innovatech,dc=test -W -f OU_users.ldif
+Un cop que hem verificat tot esta correcta haurem de crear els 2 OUs una de users i una de groups tal i com ens demana el client.
 
-Validar:
-ldapsearch -x -b dc=innovatech,dc=test ou
+Per fer això ho farem amb un arxiu .ldif per començar farem l’arxiu amb sudo nano OU\_users.ldif, un cop obert colocarem ho colocarem tal i com esta a la imatge
 
-![Verificació OU](images/ldapsearch_ou.png)
+sempre canviarem els dc depenen del nostre domini i el ou per escollir el nom del OU
 
----
+![][image9]
 
-## 🌐 Instal·lació i configuració de LAM
+Un cop que hem creat correctament l’arxiu tocara crear els grups, aixo ho farem col·locant la següent comanda 
 
-Instal·lar:
-sudo apt install ldap-account-manager
+![][image10]
 
-Accés via navegador:
-http://192.168.56.101/lam
+Ens demana la contrasenya i un cop fet això ja tindrem les OUs creades
 
-Login configuració:
-Usuari → lam
-Contrasenya → lam
+Per poder validar que les OUs estan creades correctament amb la comanda de ldapsearch, ho col·locarem tal i com esta a la imatge per aixi buscar unicament les OUs del domini innovatech.test
 
-Modificar:
-- Domini: innovatech.test
-- Admin DN: cn=admin,dc=innovatech,dc=test
+![][image11]
 
-Canviar tipus d’usuari i grup segons configuració
+Ara seguirem amb l'ús de LAM, per començar haurem d'instal·lar-lo amb la següent comanda
 
-Nou login:
-Usuari → admin
-Contrasenya → p@ssw0rd
+![][image12]
 
-![Configuració LAM](images/lam_config.png)
+Un cop fet això haurem d’anar al buscador i colocar la ip del nostre adaptador host only en el seguit de /lam , en el meu cas podem veure que la nostre ip és 192.168.56.101/24 per tant en el buscador haurem de col·locar 192.168.56.101/lam en el buscador de google.
 
----
+![][image13]
 
-## 👥 Creació de grups i usuaris
+Un cop aquí hem d’anar a la part de LAM configuration  que hi ha a la part superior dreta
 
-Grups:
-tech
-manager
+![][image14]
 
-Usuaris:
-tech01 → grup primari tech01 + secundari tech  
-manager01 → grup primari manager01 + secundari manager  
+Un cop que ja estem dins escollim la segona opció per editar els perfils
 
-Contrasenya: 1234 (forçar canvi)
+![][image15]
 
-![Usuaris creats](images/users_created.png)
+Quan estem dins haurem d’iniciar sesió, en aquest cas la conta sempre ser lam amb la contrasenya lam
 
----
+![][image16]
 
-## 🧩 Configuració del client (Zorin OS)
+Un cop que hem pogut inicar sesió haurem de modificar els parametres per tal i que s’adaptin al nostre domini, en el meu cas quedara algo aixi.
 
-Afegir Host-Only
+![][image17]
 
-Modificar:
-- /etc/hosts
-- /etc/hostname
+I a la segona pestanya de account types haurem de modificar-ho amb els noms que hem fet servir anteriorment, en meu cas quedara algo com aixi
 
-Reiniciar i validar:
-hostname -f
-dig server.innovatechXX.test
+![][image18]
 
-![Configuració hosts client](images/client_hosts.png)
+Un cop que hem fet tot això escollirem l'opció de guardar que hi ha abaix de tot
 
----
+Un cop fet això tornarem a la pàgina d’inici en la qual podrem veure que els user name ha canviat a admin, i la contrasenya que haurem de col·locar per poder entrar a en aquest cas és p@ssw0rd
 
-## 🔗 Integració LDAP al client
+![][image19]
 
-Instal·lar:
-sudo apt install libnss-ldap libpam-ldap ldap-utils nscd
+Un cop que estem dins anirem a l’apartat de grups
 
-Domini LDAP:
-innovatech.test  
-Protocol: v3  
-Admin DN: cn=admin,dc=innovatech,dc=test  
-Contrasenya: p@ssw0rd
+![][image20]
 
-Validació:
-getent passwd
+Un cop dins haurem de crear un nou grup el primer grup és dira tech que sera per els tècnics i un altre que sera manager.![][image21]
 
-![Integració LDAP](images/client_ldap_setup.png)
+ Un cop fet això haura de quedar algo com així
 
----
+![][image22]
 
-## 🔒 Configuració PAM
+Un cop que ja tenim els grups creats, haurem de crear els 2 usuaris, la part d’usuaris te 2 parts que haurem de modificar la primera será la personal que ho podem deixar tal i com està a la foto, que será únicament per colocar els noms obligatoris
 
-Editar /etc/pam.d/common-password → eliminar "use_authtok"
+![][image23]
 
-Editar /etc/pam.d/common-session → afegir al final:
-session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
+I el segon apartat sera Unix on colocarem el nom que ens demana en aquest cas sera tech01 i ara vindra un pas important.
 
-Reiniciar:
-sudo systemctl restart nscd
+Hem de crear un grup primari amb el mateix nom, cosa que ja ens dóna l'opció fent un sol click al buto que posa “crear un grup amb el mateix nom” 
 
-![Configuració PAM](images/pam_config.png)
+![][image24]
 
----
+un cop fet això tambe haurem d’afegir com a grups secundari tech quedant algo aixi 
 
-## 🧠 Validació final
+![][image25]
 
-Iniciar sessió: Not listed?  
-Usuari: tech01  
-Contrasenya: 1234
+Ara com a part extra colocarem la contrasenya que sera 1234  fent click a la part set password 
 
-Comprovar:
-id
+![][image26]
 
-![Comprovació grups](images/id_check.png)
+Escollirem  la opcio de forçar un canvi de contrasenya perque aixi l’usuari canvi la contrasenya al entrar
 
----
+![][image27]
 
-## ✅ Resultat Final
+Ara haurem de tornar a repetir el procés però amb l’usuari de manager01, ens hauria de quedar un resultat com aquest en la part d’usuaris 
 
-✔ LDAP configurat  
-✔ LAM operatiu  
-✔ 2 OUs, 2 grups, 2 usuaris  
-✔ Client Zorin autenticant contra LDAP
+I algo com aixi per la part de grups, en aquest cas tenim 4 grups els 2 pricipals de cada usuari que son manager01 i tech01, i els 2 grups que hem creat abans manager i tech
 
----
+Un cop fet això continuarem amb la màquina client, en aquest cas sera una màquina Zorin on haurem de configurar la segon interfície de xarxa com host only i configurar-la, en aquest cas ja ven configurada per defecte gràcies al servei DHCP
 
-## 📂 Estructura recomanada del projecte
+![][image28]
 
-T04-LDAP/
-├── README.md
-├── images/
-│   ├── hosts_config.png
-│   ├── netplan_setup.png
-│   ├── slapd_status.png
-│   ├── ldapsearch_ou.png
-│   ├── lam_home.png
-│   ├── lam_config.png
-│   ├── lam_account_types.png
-│   ├── groups_created.png
-│   ├── users_created.png
-│   ├── client_hosts.png
-│   ├── client_ldap_setup.png
-│   ├── pam_config.png
-│   ├── id_check.png
-│   └── ...
-└── .gitignore
+Un cop fet això tocara configurar el arxiu de host, hem d’editar aquest fitxer ja que no tenim un servei de dns
 
----
+![][image29]
 
-## ⚙️ Fitxer .gitignore suggerit
+Haurem de modificar el fitxer perque ens quedi d’aquesta forma
 
-*.swp
-*.log
-*.tmp
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+![][image30]
 
----
+Per defecte la 3r línia no està per tant haurem d’afegir, la ip que colocarem serà la ip que tingui el interfície de xarxa de host only, aquesta ip la podrem saber fent ip a
 
-📌 Només falta afegir les imatges a la carpeta "images/" amb els mateixos noms perquè tot es vegi correctament a GitHub ✅
+![][image31]
+
+Avans de confirmar que tot funciona correctament haurem de modificar l’arxiu /etc/hostname amb la comanda sudo nano /etc/hostname un cop que tenim els 2 fitxers guardats haurem de reinciar la maquina per aplicar els canvis.
+
+![][image32]
+
+Un cop fet tot això guardarem el fitxer de host i comprovarem que tot funciona correctament amb la comanda hostname \-f per veure el nom del host i amb la comanda dig(domini) en el meu cas sera dig server.innovatech19.test
+
+![][image33]
+
+Un cop fet aixo haurem d’instalar els paquets necesaris amb la seguent comanda
+
+![][image34]
+
+ 
+
+Un cop que hem instalat els paquets sortira la segunet pestanya la qual la editarem tal i com esta a la imatge pero modificant el domini
+
+![][image35]
+
+Seguim amb la insalació colocant el nostre domini 
+
+![][image36]
+
+Escollim la versió 3 del protocal del LDAP
+
+![][image37]
+
+Continuem escollint les seguents opcions
+
+![][image38]
+
+![][image39]
+
+Aqui hem de col·locar l’usuari administrador del nostre domini i el domini
+
+![][image40]
+
+Tot seguit col·loquem la nostre contrasenya del ldap que recordem que és p@ssw0rd
+
+![][image41]
+
+Un cop acabada la configuració farem la segunt comanda per confirmar que tot esta correctament 
+
+![][image42]
+
+Un cop que ja hem comprobat que ens podem conectar haurem de modificar el seguent arxiu per indicar es fara servir ldap per els usuaris i grups
+
+![][image43]
+
+Ara toca editar l’arxiu /etc/pam.d/common-password per deixar-lo tal i com esta a la imatge en el qual s’ha de borrar el use\_authtok
+
+![][image44]
+
+Un cop fet aixo editem el seguent archiu i al final de tot afegirem la segunet linia tal i com esta a la imatge
+
+![][image45]
+
+Un cop fet aixo reinciem el servei amb la comanda
+
+![][image46]
+
+I despres comprobem que podem veure els usuaris de ldap
+
+![][image47]
+
+Ara per acabar editem l’arxiu per poder inicar sessio amb els usuaris de ldap desde l’entorn grafic
+
+![][image48]
+
+Un cop que ja tenim tot fet reiniciarem la maquina per comprobar que podem iniciar sessió amb els usuaris del ldap.
+
+Escollit la opció de “Not listed?” per poder colocar el usuari i contrasenya
+
+![][image49]
+
+En aquest cas he escollit tech01 per fer la prova
+
+![][image50]
+
+Un cop que hem col·locat el user col·loquem la contrasenya que tinguem, en aquest cas la contrasenya és 1234
+
+![][image51]
+
+Per últim dins de la terminal fem servir la comanda “id” per poder comprobar que te els grups correctament assignats tal i com els hem configurat avans
+
+![][image52]
