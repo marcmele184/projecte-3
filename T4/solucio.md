@@ -1,4 +1,4 @@
-![][image1]
+![logo](image1)
 
 **Serveis de directori. LDAP**
 
@@ -100,11 +100,11 @@ Un cop dins haurem de crear un nou grup el primer grup és dira tech que sera pe
 
  Un cop fet això haura de quedar algo com així
 
-![][image22]
+![][image21]
 
 Un cop que ja tenim els grups creats, haurem de crear els 2 usuaris, la part d’usuaris te 2 parts que haurem de modificar la primera será la personal que ho podem deixar tal i com està a la foto, que será únicament per colocar els noms obligatoris
 
-![][image23]
+![][image22]
 
 I el segon apartat sera Unix on colocarem el nom que ens demana en aquest cas sera tech01 i ara vindra un pas important.
 
