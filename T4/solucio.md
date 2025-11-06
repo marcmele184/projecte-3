@@ -96,33 +96,35 @@ Un cop que estem dins anirem a l’apartat de grups
 
 ![logo](img/20.png)
 
-Un cop dins haurem de crear un nou grup el primer grup és dira tech que sera per els tècnics i un altre que sera manager.![][image21]
-
- Un cop fet això haura de quedar algo com així
+Un cop dins haurem de crear un nou grup el primer grup és dira tech que sera per els tècnics i un altre que sera manager.
 
 ![logo](img/21.png)
 
-Un cop que ja tenim els grups creats, haurem de crear els 2 usuaris, la part d’usuaris te 2 parts que haurem de modificar la primera será la personal que ho podem deixar tal i com està a la foto, que será únicament per colocar els noms obligatoris
+ Un cop fet això haura de quedar algo com així
 
 ![logo](img/22.png)
+
+Un cop que ja tenim els grups creats, haurem de crear els 2 usuaris, la part d’usuaris te 2 parts que haurem de modificar la primera será la personal que ho podem deixar tal i com està a la foto, que será únicament per colocar els noms obligatoris
+
+![logo](img/23.png)
 
 I el segon apartat sera Unix on colocarem el nom que ens demana en aquest cas sera tech01 i ara vindra un pas important.
 
 Hem de crear un grup primari amb el mateix nom, cosa que ja ens dóna l'opció fent un sol click al buto que posa “crear un grup amb el mateix nom” 
 
-![logo](img/23.png)
+![logo](img/24.png)
 
 un cop fet això tambe haurem d’afegir com a grups secundari tech quedant algo aixi 
 
-![logo](img/24.png)
+![logo](img/25.png)
 
 Ara com a part extra colocarem la contrasenya que sera 1234  fent click a la part set password 
 
-![logo](img/25.png)
+![logo](img/26.png)
 
 Escollirem  la opcio de forçar un canvi de contrasenya perque aixi l’usuari canvi la contrasenya al entrar
 
-![logo](img/26.png)
+![logo](img/27.png)
 
 Ara haurem de tornar a repetir el procés però amb l’usuari de manager01, ens hauria de quedar un resultat com aquest en la part d’usuaris 
 
@@ -130,51 +132,51 @@ I algo com aixi per la part de grups, en aquest cas tenim 4 grups els 2 pricipal
 
 Un cop fet això continuarem amb la màquina client, en aquest cas sera una màquina Zorin on haurem de configurar la segon interfície de xarxa com host only i configurar-la, en aquest cas ja ven configurada per defecte gràcies al servei DHCP
 
-![logo](img/27.png)
+![logo](img/28.png)
 
 Un cop fet això tocara configurar el arxiu de host, hem d’editar aquest fitxer ja que no tenim un servei de dns
 
-![logo](img/28.png)
+![logo](img/29.png)
 
 Haurem de modificar el fitxer perque ens quedi d’aquesta forma
 
-![logo](img/29.png)
+![logo](img/30.png)
 
 Per defecte la 3r línia no està per tant haurem d’afegir, la ip que colocarem serà la ip que tingui el interfície de xarxa de host only, aquesta ip la podrem saber fent ip a
 
-![logo](img/30.png)
+![logo](img/31.png)
 
 Avans de confirmar que tot funciona correctament haurem de modificar l’arxiu /etc/hostname amb la comanda sudo nano /etc/hostname un cop que tenim els 2 fitxers guardats haurem de reinciar la maquina per aplicar els canvis.
 
-![logo](img/31.png)
+![logo](img/32.png)
 
 Un cop fet tot això guardarem el fitxer de host i comprovarem que tot funciona correctament amb la comanda hostname \-f per veure el nom del host i amb la comanda dig(domini) en el meu cas sera dig server.innovatech19.test
 
-![logo](img/32.png)
+![logo](img/33.png)
 
 Un cop fet aixo haurem d’instalar els paquets necesaris amb la seguent comanda
 
-![logo](img/33.png)
+![logo](img/34.png)
 
  
 
 Un cop que hem instalat els paquets sortira la segunet pestanya la qual la editarem tal i com esta a la imatge pero modificant el domini
 
-![logo](img/34.png)
+![logo](img/35.png)
 
 Seguim amb la insalació colocant el nostre domini 
 
-![logo](img/35.png)
+![logo](img/36.png)
 
 Escollim la versió 3 del protocal del LDAP
 
-![logo](img/36.png)
+![logo](img/37.png)
 
 Continuem escollint les seguents opcions
 
-![logo](img/1.png)
+![logo](img/38.png)
 
-![logo](img/1.png)
+![logo](img/39.png)
 
 Aqui hem de col·locar l’usuari administrador del nostre domini i el domini
 
