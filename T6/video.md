@@ -1,2 +1,2 @@
 
-[![Ver video](https://img.youtube.com/vi/ID_DEL_VIDEO/hqdefault.jpg)](https://youtu.be/AedIYFHOqtY)
+[![Ver video](img/images.png)](https://youtu.be/AedIYFHOqtY)
