@@ -26,3 +26,5 @@ Material de classe (disponible al Moodle)
 ---
 
 # Solució
+
+[Guia](solucio.md)
