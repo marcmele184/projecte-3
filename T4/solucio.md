@@ -6,7 +6,7 @@
 
 **Marc Melendo Vicens**
 
-Per començar, haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el arxiu /etc/hosts amb sudo nan
+Per començar, haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el arxiu /etc/hosts amb sudo nano
 
 Editarem la segona línia de comanda en el qual, en primer lloc, modificarem el host name col·locant server.innovatechXX.test on XX és el número de llista i després escriurem server.
 
