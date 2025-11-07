@@ -6,29 +6,29 @@
 
 **Marc Melendo Vicens**
 
-Per començar haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el archiu /etc/hosts amb sudo nano
+Per començar, haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el arxiu /etc/hosts amb sudo nano
 
-Editarem la segona línia de comanda en el qual en primer lloc modificarem el host name col·locant server.innovatechXX.test on XX és el numero de llista i despres escriurem server
+Editarem la segona línia de comanda en el qual, en primer lloc, modificarem el host name col·locant server.innovatechXX.test on XX és el número de llista i després escriurem server.
 
 ![logo](img/2.png)
 
-A continuació configurarem els 2 adaptadors de xarxa que tenim, el primer el adaptador nat que està per defecte i el segon colocar-em el adaptador host only
+A continuació configurarem els 2 adaptadors de xarxa que tenim, el primer l'adaptador nat que està per defecte i el segon col·locar l'adaptador host only
 
-Per començar hem d’activar-lo abans de iniciar la máquina
+Per començar, hem d’activar-lo abans d'iniciar la màquina
 
 ![logo](img/3.png)
 
-Un cop fet això modificarem l’arxiu de xarxa fent sudo nano /etc/netplan/ (tabular per completar, només hi ha 1 arxiu)
+Un cop fet això modificarem l’arxiu de xarxa fent sudo nano /etc/netplan/ (tabular per completar, només hi ha 1 arxiu).
 
-El primer adaptador esta configurat de fabrica, el segon sera el enp0s8 on activar-em el dhcp per tindre una ip de forma automatica. Un cop guardat farem sudo netplan apply per guardar la nova configuració
+El primer adaptador està configurat de fàbrica, el segon serà el enp0s8 on hem d'activar el dhcp per tindre una IP de forma automàtica. Un cop guardat farem sudo netplan apply per guardar la nova configuració.
 
 ![logo](img/4.png)
 
-Ara instalarem el OpenLDAP aixo ho farem amb la seguent comanda
+Ara instal·larem el OpenLDAP això ho farem amb la següent comanda
 
 ![logo](img/5.png)
 
-Un cop fet això s’obrira un menu que haurem de seguir i ens demanara una contrasenya, en aquest cas el client ens demana fer servir la contrasenya p@ssw0rd
+Un cop fet això s’obrirà un menú que haurem de seguir i ens demanarà una contrasenya, en aquest cas el client ens demana fer servir la contrasenya p@ssw0rd
 
 ![logo](img/6.png)
 
@@ -36,15 +36,15 @@ Un cop fet això farem system status slapd per verificar que funciona correctame
 
 ![logo](img/7.png)
 
-I amb slapcat podem verificar si hem configurat correctament tot si hi ha alguna cosa que no surt com hauria de sortir podem fer dpkg-reconfigure slapd per tornar a configurar-lo
+I amb slapcat podem verificar si hem configurat correctament tot si hi ha alguna cosa que no surt com hauria de sortir podem fer dpkg-reconfigure slapd per tornar a configurar-lo.
 
 ![logo](img/8.png)
 
-Un cop que hem verificat tot esta correcta haurem de crear els 2 OUs una de users i una de groups tal i com ens demana el client.
+Un cop que hem verificat tot està correcta haurem de crear els 2 OUs una de users i una de groups tal com ens demana el client.
 
-Per fer això ho farem amb un arxiu .ldif per començar farem l’arxiu amb sudo nano OU\_users.ldif, un cop obert colocarem ho colocarem tal i com esta a la imatge
+Per fer això ho farem amb un arxiu .ldif per començar farem l’arxiu amb sudo nano OU\_users.ldif, un cop obert col·locarem ho col·locarem tal com està a la imatge.
 
-sempre canviarem els dc depenen del nostre domini i el ou per escollir el nom del OU
+Sempre canviarem els dc depenen del nostre domini i els OUs per escollir el nom del OU
 
 ![logo](img/9.png)
 
