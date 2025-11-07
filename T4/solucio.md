@@ -128,106 +128,110 @@ Escollirem  la opcio de forçar un canvi de contrasenya perque aixi l’usuari c
 
 Ara haurem de tornar a repetir el procés però amb l’usuari de manager01, ens hauria de quedar un resultat com aquest en la part d’usuaris 
 
-I algo com aixi per la part de grups, en aquest cas tenim 4 grups els 2 pricipals de cada usuari que son manager01 i tech01, i els 2 grups que hem creat abans manager i tech
-
-Un cop fet això continuarem amb la màquina client, en aquest cas sera una màquina Zorin on haurem de configurar la segon interfície de xarxa com host only i configurar-la, en aquest cas ja ven configurada per defecte gràcies al servei DHCP
-
 ![logo](img/28.png)
 
-Un cop fet això tocara configurar el arxiu de host, hem d’editar aquest fitxer ja que no tenim un servei de dns
+I  en els grups, en aquest cas tenim 4 grups els 2 pricipals de cada usuari que son manager01 i tech01, i els 2 grups que hem creat abans manager i tech
 
 ![logo](img/29.png)
 
-Haurem de modificar el fitxer perque ens quedi d’aquesta forma
+Un cop fet això continuarem amb la màquina client, en aquest cas sera una màquina Zorin on haurem de configurar la segon interfície de xarxa com host only i configurar-la, en aquest cas ja ven configurada per defecte gràcies al servei DHCP
 
 ![logo](img/30.png)
 
-Per defecte la 3r línia no està per tant haurem d’afegir, la ip que colocarem serà la ip que tingui el interfície de xarxa de host only, aquesta ip la podrem saber fent ip a
+Un cop fet això tocara configurar el arxiu de host, hem d’editar aquest fitxer ja que no tenim un servei de dns
 
 ![logo](img/31.png)
 
-Avans de confirmar que tot funciona correctament haurem de modificar l’arxiu /etc/hostname amb la comanda sudo nano /etc/hostname un cop que tenim els 2 fitxers guardats haurem de reinciar la maquina per aplicar els canvis.
+Haurem de modificar el fitxer perque ens quedi d’aquesta forma
 
 ![logo](img/32.png)
 
-Un cop fet tot això guardarem el fitxer de host i comprovarem que tot funciona correctament amb la comanda hostname \-f per veure el nom del host i amb la comanda dig(domini) en el meu cas sera dig server.innovatech19.test
+Per defecte la 3r línia no està per tant haurem d’afegir, la ip que colocarem serà la ip que tingui el interfície de xarxa de host only, aquesta ip la podrem saber fent ip a
 
 ![logo](img/33.png)
 
-Un cop fet aixo haurem d’instalar els paquets necesaris amb la seguent comanda
+Avans de confirmar que tot funciona correctament haurem de modificar l’arxiu /etc/hostname amb la comanda sudo nano /etc/hostname un cop que tenim els 2 fitxers guardats haurem de reinciar la maquina per aplicar els canvis.
 
 ![logo](img/34.png)
+
+Un cop fet tot això guardarem el fitxer de host i comprovarem que tot funciona correctament amb la comanda hostname \-f per veure el nom del host i amb la comanda dig(domini) en el meu cas sera dig server.innovatech19.test
+
+![logo](img/35.png)
+
+Un cop fet aixo haurem d’instalar els paquets necesaris amb la seguent comanda
+
+![logo](img/36.png)
 
  
 
 Un cop que hem instalat els paquets sortira la segunet pestanya la qual la editarem tal i com esta a la imatge pero modificant el domini
 
-![logo](img/35.png)
+![logo](img/37.png)
 
 Seguim amb la insalació colocant el nostre domini 
 
-![logo](img/36.png)
+![logo](img/38.png)
 
 Escollim la versió 3 del protocal del LDAP
 
-![logo](img/37.png)
+![logo](img/39.png)
 
 Continuem escollint les seguents opcions
 
-![logo](img/38.png)
+![logo](img/40.png)
 
-![logo](img/39.png)
+![logo](img/41.png)
 
 Aqui hem de col·locar l’usuari administrador del nostre domini i el domini
 
-![logo](img/1.png)
+![logo](img/42.png)
 
 Tot seguit col·loquem la nostre contrasenya del ldap que recordem que és p@ssw0rd
 
-![logo](img/1.png)
+![logo](img/43.png)
 
 Un cop acabada la configuració farem la segunt comanda per confirmar que tot esta correctament 
 
-![logo](img/1.png)
+![logo](img/44.png)
 
 Un cop que ja hem comprobat que ens podem conectar haurem de modificar el seguent arxiu per indicar es fara servir ldap per els usuaris i grups
 
-![logo](img/1.png)
+![logo](img/45.png)
 
 Ara toca editar l’arxiu /etc/pam.d/common-password per deixar-lo tal i com esta a la imatge en el qual s’ha de borrar el use\_authtok
 
-![logo](img/1.png)
+![logo](img/46.png)
 
 Un cop fet aixo editem el seguent archiu i al final de tot afegirem la segunet linia tal i com esta a la imatge
 
-![logo](img/1.png)
+![logo](img/47.png)
 
 Un cop fet aixo reinciem el servei amb la comanda
 
-![logo](img/1.png)
+![logo](img/48.png)
 
 I despres comprobem que podem veure els usuaris de ldap
 
-![logo](img/1.png)
+![logo](img/49.png)
 
 Ara per acabar editem l’arxiu per poder inicar sessio amb els usuaris de ldap desde l’entorn grafic
 
-![logo](img/1.png)
+![logo](img/50.png)
 
 Un cop que ja tenim tot fet reiniciarem la maquina per comprobar que podem iniciar sessió amb els usuaris del ldap.
 
 Escollit la opció de “Not listed?” per poder colocar el usuari i contrasenya
 
-![logo](img/1.png)
+![logo](img/51.png)
 
 En aquest cas he escollit tech01 per fer la prova
 
-![logo](img/1.png)
+![logo](img/52.png)
 
 Un cop que hem col·locat el user col·loquem la contrasenya que tinguem, en aquest cas la contrasenya és 1234
 
-![logo](img/1.png)
+![logo](img/53.png)
 
 Per últim dins de la terminal fem servir la comanda “id” per poder comprobar que te els grups correctament assignats tal i com els hem configurat avans
 
-![logo](img/1.png)
+![logo](img/54.png)
