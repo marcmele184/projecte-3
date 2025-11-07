@@ -6,7 +6,7 @@
 
 **Marc Melendo Vicens**
 
-Per començar, haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el arxiu /etc/hosts amb sudo nano
+Per començar, haurem de configurar la infraestructura del servidor, en aquest cas començarem modificant el hostname en el arxiu /etc/hosts amb sudo nan
 
 Editarem la segona línia de comanda en el qual, en primer lloc, modificarem el host name col·locant server.innovatechXX.test on XX és el número de llista i després escriurem server.
 
@@ -48,25 +48,26 @@ Sempre canviarem els dc depenen del nostre domini i els OUs per escollir el nom 
 
 ![logo](img/9.png)
 
-Un cop que hem creat correctament l’arxiu tocara crear els grups, aixo ho farem col·locant la següent comanda 
+Un cop que hem creat correctament l’arxiu tocarà crear els grups, això ho farem col·locant la següent comanda 
 
 ![logo](img/10.png)
 
 Ens demana la contrasenya i un cop fet això ja tindrem les OUs creades
 
-Per poder validar que les OUs estan creades correctament amb la comanda de ldapsearch, ho col·locarem tal i com esta a la imatge per aixi buscar unicament les OUs del domini innovatech.test
+Per poder validar que les OUs estan creades correctament amb la comanda de ldapsearch, ho col·locarem tal com està a la imatge per així buscar únicament les OUs del domini innovatech.test
 
 ![logo](img/11.png)
 
-Ara seguirem amb l'ús de LAM, per començar haurem d'instal·lar-lo amb la següent comanda
+Ara continuarem amb l'ús de LAM, per començar haurem d'instal·lar-lo amb la següent comanda
 
 ![logo](img/12.png)
 
-Un cop fet això haurem d’anar al buscador i colocar la ip del nostre adaptador host only en el seguit de /lam , en el meu cas podem veure que la nostre ip és 192.168.56.101/24 per tant en el buscador haurem de col·locar 192.168.56.101/lam en el buscador de google.
+Un cop fet això haurem d’anar al buscador i col·locar la IP del nostre adaptador host only continuat de /lam, en el meu cas podem veure que la nostre ip és 192.168.56.101/24, per tant, en el buscador haurem de col·locar 192.168.56.101/lam en el buscador de Google.
+
 
 ![logo](img/13.png)
 
-Un cop aquí hem d’anar a la part de LAM configuration  que hi ha a la part superior dreta
+Un cop aquí hem d’anar a la part de LAM configuration que hi ha a la part superior dreta
 
 ![logo](img/14.png)
 
@@ -74,15 +75,15 @@ Un cop que ja estem dins escollim la segona opció per editar els perfils
 
 ![logo](img/15.png)
 
-Quan estem dins haurem d’iniciar sesió, en aquest cas la conta sempre ser lam amb la contrasenya lam
+Quan estem dins haurem d’iniciar sessió, en aquest cas el nostre compte és lam amb la contrasenya lam
 
 ![logo](img/16.png)
 
-Un cop que hem pogut inicar sesió haurem de modificar els parametres per tal i que s’adaptin al nostre domini, en el meu cas quedara algo aixi.
+Un cop que hem pogut iniciar sessió haurem de modificar els paràmetres per tal i que s’adaptin al nostre domini, en el meu cas quedarà una cosa així.
 
 ![logo](img/17.png)
 
-I a la segona pestanya de account types haurem de modificar-ho amb els noms que hem fet servir anteriorment, en meu cas quedara algo com aixi
+I a la segona pestanya de account types haurem de modificar-ho amb els noms que hem fet servir anteriorment, en el meu cas quedarà una cosa com això
 
 ![logo](img/18.png)
 
