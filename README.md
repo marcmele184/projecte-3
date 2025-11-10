@@ -42,3 +42,15 @@ Apagar focs, resoldre incidències, respondre tickets, mantenir sistemes, docume
 [Tasca09](T9/readme.md)
 
 [Tasca10](T10/readme.md)
+
+[Projecta final 1](P01/readme.md)
+
+[Projecta final 2](P02/readme.md)
+
+[Projecta final 3](P03/readme.md)
+
+[Projecta final 4](P04/readme.md)
+
+[Projecta final 6](P06/readme.md)
+
+
