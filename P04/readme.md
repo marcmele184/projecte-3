@@ -36,3 +36,8 @@ A l’arxiu README.md cal a més de posar el títol del producte, fer una explic
 **Pas 2.2: Pujar arxius**
 
 Procediu a pujar els diversos arxius, tenint en compte que haureu de crear la carpeta **zones** prèviament a pujar els arxius de les zones. Podeu usar el procediment que es va explicar, crear un arxiu que anomenareu zones/esborrar, i un cop pujats els arxius, procediu a esborrar aquest arxiu.
+
+
+---
+
+[Arxius](P04)
