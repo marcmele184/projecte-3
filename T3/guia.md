@@ -7,11 +7,11 @@
 
 - El primer pas serà instal·lar la màquina Zorin amb un mínim de 4 GB de RAM i 2 nuclis de processador.
 
-![](img26.png)
+![](img/26.png)
 
 - Per poder començar amb la gestió de discos, primer haurem de crear-los. En aquest cas, jo he creat 3 discos de 10 GB. Un cop els tenim creats, ja podem entrar a la màquina Zorin per començar a treballar-hi.
 
-![](img27.png)
+![](img/27.png)
 
 2. # **Configuració Inicial**
 
@@ -21,7 +21,7 @@
 
 - Un cop dins de la terminal, executarem la comanda: `fdisk -l` Això ens permet veure els diferents discos. En aquest cas, podem observar que tenim el disc principal de 25 GB (sda) i els 3 discos de 10 GB creats prèviament (sdb, sdc, sdd).
 
-![](img28.png)
+![](img/28.png)
 
 - Quan ja hem confirmat que podem veure els 3 discos, haurem de crear els volums físics amb la comanda `pvcreate` **(Physical Volume Create)**.
 
@@ -35,14 +35,14 @@
 	`pvcreate /dev/sdc`  
 	`pvcreate /dev/sdd`
 
-![](img29.png)
+![](img/29.png)
 
 - Un cop creats els volums físics, toca crear el **grup de volums**. Això ens permet ajuntar tots els volums dels discos en un sol conjunt per disposar d’un únic espai des del qual podrem crear els volums lògics.
 
 - A la primera captura podem veure com creo el grup de volums amb un sol disc fent servir la comanda:  
   `vgcreate nom_del_grup /dev/sdb`
 
-![](img30.png)
+![](img/30.png)
 
 - A continuació, amb la comanda:
 
@@ -50,12 +50,12 @@
 
 - Per així poder afegir els discos dins del grup de volum, ja que quan l’hem creat únicament hem afegit un sol disc
 
-![](img31.png)
+![](img/31.png)
 
 - Per comprovar la informació del grup, utilitzarem:  
   `vgdisplay`
 
-![](img31.png)
+![](img/32.png)
 
 - Després de crear el grup de volums, toca crear els volums lògics amb la comanda:
 
@@ -64,11 +64,11 @@
 - Amb aquesta comanda podrem indicar l’espai que volem fer servir, en aquest cas sera de
   200 Mib amb el nom lv01
 
-![](img32.png)
+![](img/33.png)
 
 - Amb `vgdisplay` podem veure que l’espai està sent utilitzat.
 
-![](img.png33)
+![](img/34.png)
 
 - Ara que ja hem creat el volum lògic, el següent pas és formatejar-lo, ja que els volums lògics funcionen com particions dins del sistema d’arxius.  
 - Per poder fer això el primer pas sera crear la carpeta per poder muntar el volum, per fer això farem la següent comanda
@@ -77,15 +77,15 @@
 
 - Tot seguit farem servir la comanda `mkfs.ext4` per poder formategar el volum, tal com es pot veure a la captura de pantalla
 
-![](img.png34)
+![](img/35.png)
 
 - Un com que ja tenim el volum formategat, el següent pas sera muntar el disc, i això ho farem amb la comanda `mount` per poder muntar el volum a la carpeta creada anteriorment
 
-![](img35.png)
+![](img/36.png)
 
 - Això ja funcionaria, però cada cop que reiniciem la màquina caldria tornar a muntar el volum manualment. Per evitar-ho, farem un muntatge permanent editant l’arxiu **/etc/fstab** i afegint l’entrada corresponent.
 
-![](img1.png26)
+![](img/37.png)
 
 3. # **Alta Disponibilitat**
 
@@ -97,49 +97,49 @@ Per poder fer això seguirem aquests passos:
 
 - Desmuntarem el volum lògic amb la comanda `umount /mnt/lv01` per desmuntar el volum lògic i `lvremove` per eliminar-lo
 
-![](img1.png26)
+![](img/38.png)
 
 - I l’eliminarem amb: `vgremove volgrup`
 
-![](img1.png26)
+![](img/39.png)
 
 - Un cop que ja hem esborrat tant els volums lògics com el grup de volum tocarà crear un nou grup de volum amb el nom vg\_mirror tal com veurem a la següent comanda 
 
-![](img1.png26)
+![](img/40.png)
 
 - Un cop que ja hem creat el grup de volum tocarà fer el mirror
 
-![](img1.png26)
+![](img/41.png)
 
 - Un cop que ja tenim fet això podem observar com el volum lògic està format pels miralls i dels logs que serveixen per mantenir la sincronització  
 - Tot això fent servir la següent comanda tal com es veu a la guia
 
-![](img1.png26)
+![](img/42.png)
 
 - Un cop que ja tenim el mirror creat correctament simularem una falla per poder recuperar el disc perdut.  
 - Per començar, haurem d’apagar la màquina virtual i desconnectar un disc, per fer un exemple treure el 2n disc
 
-![](img1.png26)
+![](img/43.png)
 
 - Un cop que hem entrat a la màquina farem servir la comanda `lvdisplay` i veurem com hi ha un problema amb el disc sdb, ja que no està
 
-![](img1.png26)
+![](img/44.png)
 
 - Un cop confirmat que falta un disc apagarem la màquina i afegirem un disc, en aquest cas he afegit un disc nou que es diu copia
 
-![](img1.png26)
+![](img/45.png)
 
 - Un cop que hem confirmat que tornem a tenir 3 discos dins de la màquina amb la comanda `fdisk -l`, el següent pas sera inicialitzar el pv
 
-![](img1.png26)
+![](img/46.png)
 
 - Tot seguit haurem de tornar a afegir el disc a `vg_mirror`
 
-![](img1.png26)
+![](img/47.png)
 
 - I fer la següent comanda per restablir el mirror
 
-![](img1.png26)
+![](img/48.png)
 
 - Un cop fet això ja hauríem restablert el mirror en el nostre disc de manera exitosa
 
@@ -149,44 +149,44 @@ Per poder fer això seguirem aquests passos:
 
 - Un cop fet això tornarem a crear un volum lògic, aquest cop amb el nom `lvm_dades`
 
-![](img1.png26)
+![](49.png)
 
 - Un cop fet això el formatarem i el muntem a `/mnt/lv01` 
 
-![](img1.png26)
+![](img1.png)
 
 - Quan ja el tenim muntat farem uns arxius de prova amb la comanda touch per poder comprovar que la snapshot es fa correctament
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop que ja tenim els arxius creats farem la snapshot amb la següent comanda 
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop que ja tenim la snapshot creada haurem d’aconseguir veure-la, per fer això haurem de fer el següent:
 
 - Primer crear la carpeta al directori `/mnt`
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop fet això muntem al disc a la carpeta que acabem de crear i un cop fet això ja podrem veure els arxius
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop fet això podem veure com hem creat correctament la snapshot.
 
 - Ara provarem que la snapshot, serveix per recuperar les dades.  
 - Per tant, el primer pas sera esborrar un arxiu del disc per poder comprovar que podem recuperar les dades, ho farem amb la comanda `rm`
 
-![](img1.png26)
+![](img1.png)
 
 - Per continuar el següent pas sera desmuntar els 2 discos amb la comanda `umount`
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop que ja tenim els discos desmuntats farem servir la snapshot per poder recuperar el file04 amb les següents comandes, podem veure que hem pogut recuperar amb èxit el file04, per tant, hem pogut restaurar correctament la snapshot
 
-![](img1.png26)
+![](img1.png)
 
 5. # **Escalabilitat**
 
@@ -200,85 +200,85 @@ Per poder fer això seguirem aquests passos:
 
 `e2fsck -f /dev/volgrup/lvm_dades`
 
-![](img1.png26)
+![](img1.png)
 
 - Aquesta comanda serveix per comprovar que no hi ha error abans de modificar el sistema d’arxius per poder evitar qualsevol problema  
 - I la segona comanda sera 
 
 `resize2fs /dev/volgrup/lvm_dades`
 
-![](img1.png26)
+![](img1.png)
 
 6. # **Preparació Maquina virtual  WINDOWS**
 
-![](img1.png26)
+![](img1.png)
 
 - Anem a **Configuració → Almacenament** a la màquina virtual.
    
-![](img1.png26)
+![](img1.png)
 
 - Premem el **\+ del disc dur** per afegir un nou disc.
   
-![](img1.png26)
+![](img1.png)
 
 - Seleccionem **Crear**.![][image39]
 
 - Assignem **10 GB** i el creem.
 
-![](img1.png26)
+![](img1.png)
 
 - Repetim el procés dues vegades més fins a tenir **3 discos virtuals**.
   
-![](img1.png26)
+![](img1.png)
 
 - Seleccionem cada disc i fem clic a **Seleccionar** per afegir-los a la màquina virtual.  
 
-![](img1.png26)
+![](img1.png)
 
 - Repetirem el procés amb els altres 2 discos, quedaria així.  
 
-![](img1.png26)
+![](img1.png)
 
 7. # **Creació del Pool d'Emmagatzematge**
 
 - Encenem la nostra màquina de Windows i fem clic dret al símbol de Windows; una vegada aquí premem **Administració de discos**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Un cop dins, ens sortirà aquesta finestra; fem clic a **Acceptar**, el que inicialitzarà els discos i els farà utilitzables.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ara cercarem a la barra de cerca de Windows **Administrar espacios de almacenamiento**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Entrarem a un menú on premem **Crear un nuevo grupo y espacios de almacenamiento**, això serà per a la creació del grup de discos.  
 
-![](img1.png26)
+![](img1.png)
 
 - Crearem un grup amb els 3 discos.  
 
-![](img1.png26)
+![](img1.png)
 
 
 8. # **Resiliència mirall doble**
 
 - Dins del grup posarem el nom que vulguem i la lletra de unitat que vulguem. A **Resistencia** posarem **Reflejo doble**, i a **Tamaño máximo** posarem **14 GB** finalmente picarem a crear espacio de almacenamiento.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ja tenim el **mirall doble**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Per simular que ha fallat un disc, hem desconnectat un d’ells.  
 
-![](img1.png26)
+![](img1.png)
 
 - Quan tornem a encendre la màquina, com podem veure, tots els arxius s’han mantingut sense cap problema.  
 
-![](img1.png26)
+![](img1.png)
 
   # 
 
@@ -289,55 +289,55 @@ Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informa
 
 - Ara, per fer la paritat, entrarem un altre cop a **Espacios de almacenamiento** i premem **Cambiar configuración**, que ens deixarà modificar-lo; li donarem a **Eliminar**.  
 
-![](img1.png26)
+![](img1.png)
 
 
 - Un cop donat **Eliminar**, tindrem aquest menú on premem **Eliminar espacio de almacenamiento**, el que eliminarà el nostre mirall doble per crear-ne un de nou.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ara tindrem el grup lliure; li donarem a **Crear un espacio de almacenamiento**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ara configurarem un nou espai d’emmagatzematge: en **Tipo de resistencia** posarem **Paridad** i li assignarem un espai, en aquest cas **14 GB**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Podem veure que aquí tenim el nostre **espai en paritat** ben configurat.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar, cosa que ens permetrà observar que les dades estan intactes  
 
-![](img1.png26)
+![](img1.png)
 
 
 10. # **Resiliència mirall triple**
 
 - Ara seguirem el mateix procés que abans per eliminar la paritat i farem un **triple mirall**. Per poder fer el triple mirall, haurem de posar **2 discos més** i repetir els passos del principi, fent un grup d’espai en aquest cas de **5 discos**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Quan el creem, podrem crear el nou espai de **triple mirall**.  
 
-![](img1.png26)
+![](img1.png)
 
   
 
 - Podrem veure que tenim el **triple mirall**.  
 
-![](img1.png26)
+![](img1.png)
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar el que ens permetrà observar que les dades estan intactes  
 
-![](img1.png26)
+![](img1.png)
 
 - Dins del propi menú d’espais d’emmagatzematge podem gestionar moltes coses, així com veure l’estat dels discos i quant espai estan donant si premem a **Unitats físiques**.
 
 
-![](img1.png26)
+![](img1.png)
 
 - Per exemple si aquest disc dins d'una paritat falla ens sortirà quin és el que falla com a una advertència   
 
-![](img1.png26)
+![](img1.png)
