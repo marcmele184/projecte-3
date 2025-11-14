@@ -40,4 +40,4 @@ Procediu a pujar els diversos arxius, tenint en compte que haureu de crear la ca
 
 ---
 
-[Arxius](arxiu)
+[Arxius](arxius)
