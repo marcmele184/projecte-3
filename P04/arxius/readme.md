@@ -1,4 +1,5 @@
 En aquest repo tindras els 4 arxius de configuració per un servidor DNS
+
 Els 2 arxius de zones hauran d'anar dins d'una carpeta zones dins de la carpeta /etc/bind
 
 # 1.Arxiu de configuració de zones
