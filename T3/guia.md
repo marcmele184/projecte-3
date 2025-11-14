@@ -1,7 +1,7 @@
 
 ####    
 
-1. # **Instal·lació màquina Zorin**
+# **1. Instal·lació màquina Zorin**
 
  
 
@@ -13,7 +13,7 @@
 
 ![](img/27.png)
 
-2. # **Configuració Inicial**
+# **2. Configuració Inicial**
 
 - Abans de poder començar haurem d’instal·lar **fdisk** amb la comanda:
 
@@ -87,7 +87,7 @@
 
 ![](img/37.png)
 
-3. # **Alta Disponibilitat**
+# **3. Alta Disponibilitat**
 
 - Ara utilitzarem una tècnica de redundància per augmentar la seguretat: **el mirror**, que és similar al RAID 1 però aplicat a volums lògics.
 
@@ -143,7 +143,7 @@ Per poder fer això seguirem aquests passos:
 
 - Un cop fet això ja hauríem restablert el mirror en el nostre disc de manera exitosa
 
-4. # **Instantànies** 
+# **4. Instantànies** 
 
 - Un cop que ja sabem com fer el mirror continuarem fent una snapshot, per començar eliminarem el volum anterior tal com hem fet anteriorment.
 
@@ -188,13 +188,13 @@ Per poder fer això seguirem aquests passos:
 
 ![](img1.png)
 
-5. # **Escalabilitat**
+# **5. Escalabilitat**
 
 - Per acabar, explicaré com podem ampliar un volum que ja hem muntat.  
 - Per començar, s’ha de desmuntar el disc, això ho farem amb la comanda `umount.`  
 - Un cop que ja tenim el disc desmuntat farem servir la comanda `lvextend`, aquesta comanda ens servirà per estendre el volum
 
-![][image33]
+![](img1.png)
 
 - Un cop que ja tenim el volum ampliat el següent pas sera ampliar el sistema de fitxers, per poder fer això seguirem 2 comandes, la primera serà.
 
@@ -209,7 +209,7 @@ Per poder fer això seguirem aquests passos:
 
 ![](img1.png)
 
-6. # **Preparació Maquina virtual  WINDOWS**
+# **6. Preparació Maquina virtual  WINDOWS**
 
 ![](img1.png)
 
@@ -239,7 +239,7 @@ Per poder fer això seguirem aquests passos:
 
 ![](img1.png)
 
-7. # **Creació del Pool d'Emmagatzematge**
+# **7. Creació del Pool d'Emmagatzematge**
 
 - Encenem la nostra màquina de Windows i fem clic dret al símbol de Windows; una vegada aquí premem **Administració de discos**.  
 
@@ -262,7 +262,7 @@ Per poder fer això seguirem aquests passos:
 ![](img1.png)
 
 
-8. # **Resiliència mirall doble**
+# **8. Resiliència mirall doble**
 
 - Dins del grup posarem el nom que vulguem i la lletra de unitat que vulguem. A **Resistencia** posarem **Reflejo doble**, i a **Tamaño máximo** posarem **14 GB** finalmente picarem a crear espacio de almacenamiento.  
 
@@ -282,7 +282,7 @@ Per poder fer això seguirem aquests passos:
 
   # 
 
-9. # **Resiliència de paritat**
+# **9. Resiliència de paritat**
 
 El **mirall** guarda una còpia exacta de les dades als 2 discos; té una **alta disponibilitat** perquè si es perd un disc, no es perd cap informació.  
 Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informació de paritat que permetrà reconstruir-les si un dels discs falla; per tant, és més eficient que el mirall pel fet que no duplica totes les dades, cosa que fa que no es gasti tant d’espai.
@@ -313,7 +313,7 @@ Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informa
 ![](img1.png)
 
 
-10. # **Resiliència mirall triple**
+# **10. Resiliència mirall triple**
 
 - Ara seguirem el mateix procés que abans per eliminar la paritat i farem un **triple mirall**. Per poder fer el triple mirall, haurem de posar **2 discos més** i repetir els passos del principi, fent un grup d’espai en aquest cas de **5 discos**.  
 
