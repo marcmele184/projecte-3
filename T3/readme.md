@@ -44,3 +44,9 @@ Penseu que posteriorment, haureu de presentar al client les conclusions de la vo
 
 * [LVM Linux](https://docs.google.com/presentation/d/1EFSMfLQRM0wvxRFEvXLN0oaiBq3goWNQ/edit?usp=sharing&ouid=104728425662496836733&rtpof=true&sd=true)  
 * [Espais d’emmagatzematge (Windows)](https://docs.google.com/presentation/d/1Xi9atPzB6fmiLM0qmKP2PxBrixb-s-ZB/edit?usp=sharing&ouid=104728425662496836733&rtpof=true&sd=true)
+
+---
+
+[Guia LVM amb Zorin OS i Espais d'Emmagatzematge (Storage Spaces)](guia.md)
+
+
