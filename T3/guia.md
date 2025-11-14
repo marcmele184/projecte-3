@@ -129,19 +129,7 @@ Per poder fer això seguirem aquests passos:
 
 ![](img/45.png)
 
-- Un cop que hem confirmat que tornem a tenir 3 discos dins de la màquina amb la comanda `fdisk -l`, el següent pas sera inicialitzar el pv
-
-![](img/46.png)
-
-- Tot seguit haurem de tornar a afegir el disc a `vg_mirror`
-
-![](img/47.png)
-
-- I fer la següent comanda per restablir el mirror
-
-![](img/48.png)
-
-- Un cop fet això ja hauríem restablert el mirror en el nostre disc de manera exitosa
+Un cop fet que tornem a iniciar la maquina podrem veure que automàticament tornarem a tindre el disc restaurat
 
 # **4. Instantànies** 
 
@@ -211,74 +199,74 @@ Per poder fer això seguirem aquests passos:
 
 # **6. Preparació Maquina virtual  WINDOWS**
 
-![](img1.png)
+![](img/1.png)
 
 - Anem a **Configuració → Almacenament** a la màquina virtual.
    
-![](img1.png)
+![](img/2.png)
 
 - Premem el **\+ del disc dur** per afegir un nou disc.
   
-![](img1.png)
+![](img/3.png)
 
 - Seleccionem **Crear**.![][image39]
 
 - Assignem **10 GB** i el creem.
 
-![](img1.png)
+![](img/4.png)
 
 - Repetim el procés dues vegades més fins a tenir **3 discos virtuals**.
   
-![](img1.png)
+![](img/5.png)
 
 - Seleccionem cada disc i fem clic a **Seleccionar** per afegir-los a la màquina virtual.  
 
-![](img1.png)
+![](img/6.png)
 
 - Repetirem el procés amb els altres 2 discos, quedaria així.  
 
-![](img1.png)
+![](img/7.png)
 
 # **7. Creació del Pool d'Emmagatzematge**
 
 - Encenem la nostra màquina de Windows i fem clic dret al símbol de Windows; una vegada aquí premem **Administració de discos**.  
 
-![](img1.png)
+![](img/8.png)
 
 - Un cop dins, ens sortirà aquesta finestra; fem clic a **Acceptar**, el que inicialitzarà els discos i els farà utilitzables.  
 
-![](img1.png)
+![](img/9.png)
 
 - Ara cercarem a la barra de cerca de Windows **Administrar espacios de almacenamiento**.  
 
-![](img1.png)
+![](img/10.png)
 
 - Entrarem a un menú on premem **Crear un nuevo grupo y espacios de almacenamiento**, això serà per a la creació del grup de discos.  
 
-![](img1.png)
+![](img/11.png)
 
 - Crearem un grup amb els 3 discos.  
 
-![](img1.png)
+![](img/12.png)
 
 
 # **8. Resiliència mirall doble**
 
 - Dins del grup posarem el nom que vulguem i la lletra de unitat que vulguem. A **Resistencia** posarem **Reflejo doble**, i a **Tamaño máximo** posarem **14 GB** finalmente picarem a crear espacio de almacenamiento.  
 
-![](img1.png)
+![](img/13.png)
 
 - Ja tenim el **mirall doble**.  
 
-![](img1.png)
+![](img/14.png)
 
 - Per simular que ha fallat un disc, hem desconnectat un d’ells.  
 
-![](img1.png)
+![](img/15.png)
 
 - Quan tornem a encendre la màquina, com podem veure, tots els arxius s’han mantingut sense cap problema.  
 
-![](img1.png)
+![](img/16.png)
 
   # 
 
@@ -289,55 +277,55 @@ Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informa
 
 - Ara, per fer la paritat, entrarem un altre cop a **Espacios de almacenamiento** i premem **Cambiar configuración**, que ens deixarà modificar-lo; li donarem a **Eliminar**.  
 
-![](img1.png)
+![](img/17.png)
 
 
 - Un cop donat **Eliminar**, tindrem aquest menú on premem **Eliminar espacio de almacenamiento**, el que eliminarà el nostre mirall doble per crear-ne un de nou.  
 
-![](img1.png)
+![](img/18.png)
 
 - Ara tindrem el grup lliure; li donarem a **Crear un espacio de almacenamiento**.  
 
-![](img1.png)
+![](img/19.png)
 
 - Ara configurarem un nou espai d’emmagatzematge: en **Tipo de resistencia** posarem **Paridad** i li assignarem un espai, en aquest cas **14 GB**.  
 
-![](img1.png)
+![](img/20.png)
 
 - Podem veure que aquí tenim el nostre **espai en paritat** ben configurat.  
 
-![](img1.png)
+![](img/21.png)
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar, cosa que ens permetrà observar que les dades estan intactes  
 
-![](img1.png)
+![](img/21.png)
 
 
 # **10. Resiliència mirall triple**
 
 - Ara seguirem el mateix procés que abans per eliminar la paritat i farem un **triple mirall**. Per poder fer el triple mirall, haurem de posar **2 discos més** i repetir els passos del principi, fent un grup d’espai en aquest cas de **5 discos**.  
 
-![](img1.png)
+![](img/22.png)
 
 - Quan el creem, podrem crear el nou espai de **triple mirall**.  
 
-![](img1.png)
+![](img/23.png)
 
   
 
 - Podrem veure que tenim el **triple mirall**.  
 
-![](img1.png)
+![](img/17.png)
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar el que ens permetrà observar que les dades estan intactes  
 
-![](img1.png)
+![](img/24.png)
 
 - Dins del propi menú d’espais d’emmagatzematge podem gestionar moltes coses, així com veure l’estat dels discos i quant espai estan donant si premem a **Unitats físiques**.
 
 
-![](img1.png)
+![](img/25.png)
 
 - Per exemple si aquest disc dins d'una paritat falla ens sortirà quin és el que falla com a una advertència   
 
-![](img1.png)
+![](img/25.png)
