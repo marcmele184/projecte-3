@@ -1,5 +1,9 @@
 
-####    
+
+
+
+
+####   
 
 # **1. Instal·lació màquina Zorin**
 
@@ -137,44 +141,44 @@ Un cop fet que tornem a iniciar la maquina podrem veure que automàticament torn
 
 - Un cop fet això tornarem a crear un volum lògic, aquest cop amb el nom `lvm_dades`
 
-![](49.png)
+![](img/46.png)
 
 - Un cop fet això el formatarem i el muntem a `/mnt/lv01` 
 
-![](img1.png)
+![](img/47.png)
 
 - Quan ja el tenim muntat farem uns arxius de prova amb la comanda touch per poder comprovar que la snapshot es fa correctament
 
-![](img1.png)
+![](img/48.png)
 
 - Un cop que ja tenim els arxius creats farem la snapshot amb la següent comanda 
 
-![](img1.png)
+![](img/49.png)
 
 - Un cop que ja tenim la snapshot creada haurem d’aconseguir veure-la, per fer això haurem de fer el següent:
 
 - Primer crear la carpeta al directori `/mnt`
 
-![](img1.png)
+![](img/50.png)
 
 - Un cop fet això muntem al disc a la carpeta que acabem de crear i un cop fet això ja podrem veure els arxius
 
-![](img1.png)
+![](img/51.png)
 
 - Un cop fet això podem veure com hem creat correctament la snapshot.
 
 - Ara provarem que la snapshot, serveix per recuperar les dades.  
 - Per tant, el primer pas sera esborrar un arxiu del disc per poder comprovar que podem recuperar les dades, ho farem amb la comanda `rm`
 
-![](img1.png)
+![](img/52.png)
 
 - Per continuar el següent pas sera desmuntar els 2 discos amb la comanda `umount`
 
-![](img1.png)
+![](img/53.png)
 
 - Un cop que ja tenim els discos desmuntats farem servir la snapshot per poder recuperar el file04 amb les següents comandes, podem veure que hem pogut recuperar amb èxit el file04, per tant, hem pogut restaurar correctament la snapshot
 
-![](img1.png)
+![](img/54.png)
 
 # **5. Escalabilitat**
 
@@ -182,20 +186,20 @@ Un cop fet que tornem a iniciar la maquina podrem veure que automàticament torn
 - Per començar, s’ha de desmuntar el disc, això ho farem amb la comanda `umount.`  
 - Un cop que ja tenim el disc desmuntat farem servir la comanda `lvextend`, aquesta comanda ens servirà per estendre el volum
 
-![](img1.png)
+![](img/55.png)
 
 - Un cop que ja tenim el volum ampliat el següent pas sera ampliar el sistema de fitxers, per poder fer això seguirem 2 comandes, la primera serà.
 
 `e2fsck -f /dev/volgrup/lvm_dades`
 
-![](img1.png)
+![](img/56.png)
 
 - Aquesta comanda serveix per comprovar que no hi ha error abans de modificar el sistema d’arxius per poder evitar qualsevol problema  
 - I la segona comanda sera 
 
 `resize2fs /dev/volgrup/lvm_dades`
 
-![](img1.png)
+![](img/57.png)
 
 # **6. Preparació Maquina virtual  WINDOWS**
 
