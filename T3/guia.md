@@ -298,7 +298,7 @@ Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informa
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar, cosa que ens permetrà observar que les dades estan intactes  
 
-![](img/21.png)
+![](img/26.png)
 
 
 # **10. Resiliència mirall triple**
@@ -315,16 +315,16 @@ Al contrari, la **paritat** no duplica totes les dades, sinó que guarda informa
 
 - Podrem veure que tenim el **triple mirall**.  
 
-![](img/17.png)
+![](img/24.png)
 
 - Ara repetirem el procés d'eliminar un disc i el tornarem a posar el que ens permetrà observar que les dades estan intactes  
 
-![](img/24.png)
+![](img/16.png)
 
 - Dins del propi menú d’espais d’emmagatzematge podem gestionar moltes coses, així com veure l’estat dels discos i quant espai estan donant si premem a **Unitats físiques**.
 
 
-![](img/25.png)
+![](img/24.png)
 
 - Per exemple si aquest disc dins d'una paritat falla ens sortirà quin és el que falla com a una advertència   
 
